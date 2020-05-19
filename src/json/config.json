@@ -1,0 +1,14 @@
+{
+    "name": "Brooths Games",
+    "botOwnerRoleName": "bot-owner",
+    "enableReactions": true,
+    "color": "#FFFFFF",
+    "activity": {
+        "name": "Brooths Games",
+        "options": "LISTENING"
+    },
+    "time_delete": 3000,
+    "commands": [
+        "clear", "help"
+    ]
+}
