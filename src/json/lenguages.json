@@ -1,8 +1,75 @@
 {
-    "english": {
-
+    "command": "comando",
+    "command_not_allowed": "No tienes permiso para usar este comando",
+    "syntax": "Sintaxis",
+    "error": "ERROR",
+    "info": "INFO",
+    "required": "requerido",
+    "optional": "opcional",
+    "name": "Nombre",
+    "id": "ID",
+    "amount": "cantidad",
+    "channel": "canal",
+    "deleted_messages": "Mensajes eliminados correctamente",
+    "invalid_amount": "La cantidad indicada es inavalida",
+    "status": {
+        "name": "Estado",
+        "online": {
+            "name": "Conectado",
+            "color": "#40AC7E"
+        },
+        "offline": {
+            "name": "Desconectado",
+            "color": "#747F8D"
+        },
+        "idle": {
+            "name": "Ausente",
+            "color": "#F7A518"
+        },
+        "dnd": {
+            "name": "No molestar",
+            "color": "#EE4747"
+        }
     },
-    "spanish": {
-
-    }
+    "user_information": "Información de usuario",
+    "avatar_info": "El avatar del usuario es",
+    "user": "Usuario",
+    "ping": "Ping",
+    "random_text": "Random",
+    "region": {
+        "colombia": "Colombia",
+        "brazil": "Brazil",
+        "eu-central": "Central Europe",
+        "singapore": "Singapore",
+        "us-central": "U.S. Central",
+        "sydney": "Sydney",
+        "us-east": "U.S. East",
+        "us-south": "U.S. South",
+        "us-west": "U.S. West",
+        "eu-west": "Western Europe",
+        "vip-us-east": "VIP U.S. East",
+        "london": "London",
+        "amsterdam": "Amsterdam",
+        "hongkong": "Hong Kong"
+    },
+    "verification_level": {
+        "NONE": "Ninguno",
+        "LOW": "Bajo",
+        "MEDIUM": "Medio",
+        "HIGH": "Alto",
+        "VERY_HIGH": "Muy alto",
+        "name": "Nivel de verificacion"
+    },
+    "created": "Creado",
+    "owner": "Dueño",
+    "country": "Pais",
+    "users": "Usuarios",
+    "members": "Miembros",
+    "bots": "Bots",
+    "afk_time": "Tiempo AFK",
+    "roles": "Roles",
+    "channels": "Canales",
+    "emojis": "Emojis",
+    "welcome_text": "llego la puta",
+    "bye_text": "la muy perra se fue, suerte pirobo"
 }

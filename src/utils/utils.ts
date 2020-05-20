@@ -1,13 +1,16 @@
-import { TextChannel } from 'discord.js';
-const { time_delete } = require('../config.json');
+import { TextChannel } from "discord.js";
+import { time_delete } from './../json/config.json';
 
-module.exports.deleteBotMessage = (channel: TextChannel, amount: number) => {
-    try {
-        setTimeout(() => {
-            channel.bulkDelete(amount);
-        }, time_delete);
+export default class CommandHandler {
+
+    deleteBotMessage(channel: TextChannel, amount: number) {
+        try {
+            setTimeout(() => {
+                channel.bulkDelete(amount);
+            }, time_delete);
+        }
+        catch (e) {
+            console.log(e);
+        }
     }
-    catch (e) {
-        console.log(e);
-    }
-};
+}

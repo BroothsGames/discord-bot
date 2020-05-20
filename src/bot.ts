@@ -1,15 +1,16 @@
-import Discord from 'discord.js';
-const client = new Discord.Client();
-import config from './json/config.json';
-import CommandHandler from "./command_handler";
-const commandHandler = new CommandHandler(config.commands);
+import { config } from 'dotenv';
+import { name, activity, commands } from './json/config.json';
+config();
 
-/*import CommandHandler from './utils/utils';
-const commandHandler = new CommandHandler(config.commands);*/
+import { Client, ActivityType, Message } from 'discord.js';
+const client = new Client();
+
+import CommandHandler from "./command_handler";
+const commandHandler = new CommandHandler(commands);
 
 client.once("ready", () => {
-    console.log(`${config.name} ready!`);
-    client.user?.setActivity(config.activity.name, { type: config.activity.options as any });
+    console.log(`${name} ready!`);
+    client.user?.setActivity(activity.name, { type: activity.options as ActivityType });
 });
 
 client.on('message', async message => {

@@ -1,8 +1,15 @@
-import { Message, Util } from "discord.js";
-//import { commands } from './json/config.json';
-/*import Utils from './utils/utils';
-const u = new Utils();*/
-//const utils = new Utils();
+import lenguage from './json/lenguages.json'
+import { Message, TextChannel } from "discord.js";
+import Utils from './utils/utils';
+const utils = new Utils();
+
+//import {Command} from './commands/help';
+
+/*interface commands {
+    Command: Class
+}*/
+
+const URL: Array<any> = ["clear", "help"];
 
 export default class CommandHandler {
 
@@ -18,11 +25,13 @@ export default class CommandHandler {
         const args = message.content.slice(process.env.PREFIX?.length).trim().split(/ +/g);
         const command = args.shift()?.toLowerCase();
 
+        var isValidCommand = false;
+
         for (let index = 0; index < this.commands.length; index++) {
             if (command == this.commands[index]) {
-                const Command = require(`./commands/clear`);
-                const command = new Command(message, args, index);
-                var isValidCommand = command.execute();
+                const Command = require(`./commands/${URL[index]}`);
+                Command.execute(message, args, index);
+                isValidCommand = true;
                 break;
             }
         }
@@ -30,13 +39,13 @@ export default class CommandHandler {
         if(isValidCommand) isValidCommand = false;
         else if (command === '') {
             await message.channel.bulkDelete(1);
-            /*await message.channel.send(`${lenguage.syntax}: ` + "`" + `${process.env.PREFIX}${lenguage.command} [${lenguage.required}] (${lenguage.optional})` + "`" + ``);
-            utils.deleteBotMessage(message.channel, 1);*/
+            await message.channel.send(`${lenguage.syntax}: ` + "`" + `${process.env.PREFIX}${lenguage.command} [${lenguage.required}] (${lenguage.optional})` + "`" + ``);
+            utils.deleteBotMessage(message.channel as TextChannel, 1);
         }
         else {
             await message.channel.bulkDelete(1);
-            /*await message.channel.send(`${lenguage.error}: command invalid`);
-            utils.deleteBotMessage(message.channel, 1);*/
+            await message.channel.send(`${lenguage.error}: command invalid`);
+            utils.deleteBotMessage(message.channel as TextChannel, 1);
         }
     }
 
