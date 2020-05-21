@@ -9,6 +9,7 @@
     },
     "time_delete": 3000,
     "commands": [
-        "clear", "help", "pedidos"
-    ]
+        "clear", "help", "order"
+    ],
+    "orders_channel": "712766404033511514"
 }
