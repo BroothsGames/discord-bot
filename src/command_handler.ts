@@ -9,7 +9,7 @@ const utils = new Utils();
     Command: Class
 }*/
 
-const URL: Array<any> = ["clear", "help"];
+const URL: Array<any> = ["clear", "help", "pedidos"];
 
 export default class CommandHandler {
 

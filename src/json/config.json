@@ -9,6 +9,6 @@
     },
     "time_delete": 3000,
     "commands": [
-        "clear", "help"
+        "clear", "help", "pedidos"
     ]
 }

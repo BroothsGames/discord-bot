@@ -1,39 +1,39 @@
 {
-    "command": "comando",
-    "command_not_allowed": "No tienes permiso para usar este comando",
+    "command": "command",
+    "command_not_allowed": "You don´t haver permissions for use this command.",
     "syntax": "Sintaxis",
     "error": "ERROR",
     "info": "INFO",
-    "required": "requerido",
-    "optional": "opcional",
-    "name": "Nombre",
+    "required": "required",
+    "optional": "optional",
+    "name": "name",
     "id": "ID",
-    "amount": "cantidad",
-    "channel": "canal",
-    "deleted_messages": "Mensajes eliminados correctamente",
-    "invalid_amount": "La cantidad indicada es inavalida",
+    "amount": "quantity",
+    "channel": "channel",
+    "deleted_messages": "Messages successfully deleted",
+    "invalid_amount": "The indicated quantity is invalid",
     "status": {
-        "name": "Estado",
+        "name": "Status",
         "online": {
-            "name": "Conectado",
+            "name": "Connected",
             "color": "#40AC7E"
         },
         "offline": {
-            "name": "Desconectado",
+            "name": "Offline",
             "color": "#747F8D"
         },
         "idle": {
-            "name": "Ausente",
+            "name": "Idle",
             "color": "#F7A518"
         },
         "dnd": {
-            "name": "No molestar",
+            "name": "Do not bother",
             "color": "#EE4747"
         }
     },
-    "user_information": "Información de usuario",
-    "avatar_info": "El avatar del usuario es",
-    "user": "Usuario",
+    "user_information": "User information",
+    "avatar_info": "The user´s avatar is",
+    "user": "User",
     "ping": "Ping",
     "random_text": "Random",
     "region": {
@@ -53,23 +53,23 @@
         "hongkong": "Hong Kong"
     },
     "verification_level": {
-        "NONE": "Ninguno",
-        "LOW": "Bajo",
-        "MEDIUM": "Medio",
-        "HIGH": "Alto",
-        "VERY_HIGH": "Muy alto",
-        "name": "Nivel de verificacion"
+        "NONE": "None",
+        "LOW": "Low",
+        "MEDIUM": "Medium",
+        "HIGH": "High",
+        "VERY_HIGH": "Very high",
+        "name": "Level verification"
     },
-    "created": "Creado",
-    "owner": "Dueño",
-    "country": "Pais",
-    "users": "Usuarios",
-    "members": "Miembros",
+    "created": "Created",
+    "owner": "Owner",
+    "country": "Country",
+    "users": "Users",
+    "members": "Members",
     "bots": "Bots",
-    "afk_time": "Tiempo AFK",
+    "afk_time": "Time AFK",
     "roles": "Roles",
-    "channels": "Canales",
+    "channels": "Channels",
     "emojis": "Emojis",
-    "welcome_text": "llego la puta",
-    "bye_text": "la muy perra se fue, suerte pirobo"
+    "welcome_text": "welcome.",
+    "bye_text": "bye, bye."
 }
