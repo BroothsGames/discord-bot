@@ -2,6 +2,7 @@ import { Message, MessageEmbed } from "discord.js";
 import { color, commands_info } from './../json/config.json';
 
 module.exports.execute = async (message: Message, args: string, index: number) => {
+    await message.channel.bulkDelete(1);
     let description: String = "";
 
     if (message.member?.hasPermission("ADMINISTRATOR")) {
