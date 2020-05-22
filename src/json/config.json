@@ -15,6 +15,12 @@
     "commands_info":[
         {
             "admin": true,
+            "name": "help",
+            "usage": "(command)",
+            "description": "This command is used to find out the function of the commands"
+        },
+        {
+            "admin": true,
             "name": "clear",
             "usage": "[quantity] (channel)",
             "description": "This command is used to delete messages"

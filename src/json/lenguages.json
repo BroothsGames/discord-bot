@@ -8,8 +8,6 @@
     "optional": "optional",
     "name": "name",
     "id": "ID",
-    "amount": "quantity",
-    "channel": "channel",
     "deleted_messages": "Messages successfully deleted",
     "invalid_amount": "The indicated quantity is invalid",
     "status": {
@@ -72,7 +70,7 @@
     "emojis": "Emojis",
     "welcome_text": "welcome.",
     "bye_text": "bye, bye.",
-    "order": "order",
     "order_info": "Your order has sent the team of developers, wait instructions please.",
-    "order_send": "has sent a order"
+    "order_send": "has sent a order",
+    "invalid_command": "invalid command"
 }

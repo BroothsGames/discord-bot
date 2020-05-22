@@ -1,4 +1,4 @@
-import { commands } from './../json/config.json';
+import { commands, commands_info } from './../json/config.json';
 import lenguage from './../json/lenguages.json';
 
 import { Message, TextChannel } from "discord.js";
@@ -14,7 +14,7 @@ module.exports.execute = async (message: Message, args: string, index: number) =
     if (!args[0]) {
         try {
             await message.channel.bulkDelete(1);
-            await message.channel.send(`${lenguage.syntax}: ` + '`' + `${process.env.PREFIX}${commands[index]} [${lenguage.amount}] (${lenguage.channel})` + '`' + ``);
+            await message.channel.send(`${lenguage.syntax}: ` + '`' + `${process.env.PREFIX}${commands[index]} ${commands_info[index].usage})` + '`' + ``);
             utils.deleteBotMessage(message.channel as TextChannel, 1);
         }
         catch (e) {
