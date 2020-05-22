@@ -3,7 +3,7 @@ import { Message, TextChannel } from "discord.js";
 import Utils from './utils/utils';
 const utils = new Utils();
 
-const URL: Array<any> = ["clear", "help", "order", "whois", "test"];
+const URL: Array<any> = ["help", "clear", "order", "whois", "test"];
 
 export default class CommandHandler {
 

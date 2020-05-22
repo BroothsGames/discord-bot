@@ -9,29 +9,27 @@
     },
     "time_delete": 3000,
     "commands": [
-        "clear", "help", "order", "whois"	
+        "help", "clear", "order", "whois"	
     ],
     "orders_channel": "712766404033511514",
-    "commands_info":{
-        "clear":{
+    "commands_info":[
+        {
+            "admin": true,
             "name": "clear",
             "usage": "[quantity] (channel)",
             "description": "This command is used to delete messages"
         },
-        "orders":{
+        {
+            "admin": false,
             "name": "orders",
             "usage": "[order]",
             "description": "put the order you need specifically and it will be sent to the team"
         },
-        "test":{
-            "name": "test",
-            "usage": "[N/A]",
-            "description": "Show if the command works."
-        },
-        "whois":{
+        {
+            "admin": false,
             "name": "whois",
             "usage": "[user]",
             "description": "Show a big information of the user."
         }
-    }
+    ]
 }

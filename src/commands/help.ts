@@ -1,21 +1,32 @@
 import { Message, MessageEmbed } from "discord.js";
-import config from './../json/config.json';
+import { color, commands_info } from './../json/config.json';
 
 module.exports.execute = async (message: Message, args: string, index: number) => {
+    let description: String = "";
+
     if (message.member?.hasPermission("ADMINISTRATOR")) {
+    for (let cycle = 0; cycle < commands_info.length ; cycle++) {
+        description = `${description} **Name**: ${commands_info[cycle].name}\n **Usage**: ${commands_info[cycle].usage}\n**Description**: ${commands_info[cycle].description}\n\n`
+    }
+
     const embed = new MessageEmbed()
-    embed.setColor(`${config.color}`)
+    embed.setColor(`${color}`)
     embed.setAuthor("Commands")
-    embed.setDescription(`**Name**: ${config.commands_info.clear.name}\n **Usage**: ${config.commands_info.clear.usage}\n **Description**: ${config.commands_info.clear.description}\n\n**Name**: ${config.commands_info.test.name}\n **Usage**: ${config.commands_info.test.usage}\n **Description**: ${config.commands_info.test.description}\n\n**Name**: ${config.commands_info.orders.name}\n **Usage**: ${config.commands_info.orders.usage}\n **Description**: ${config.commands_info.orders.description}`)
+    embed.setDescription(description)
     message.author.send(embed)
     } else if (!message.member?.hasPermission("ADMINISTRATOR")) {
+        for (let cycle = 0; cycle < commands_info.length ; cycle++) {
+            if(commands_info[cycle].admin == false) {
+                description = `${description} **Name**: ${commands_info[cycle].name}\n **Usage**: ${commands_info[cycle].usage}\n**Description**: ${commands_info[cycle].description}\n\n`
+            }
+        }
+
         const embed = new MessageEmbed()
-        embed.setColor(`${config.color}`)
+        embed.setColor(`${color}`)
         embed.setAuthor("Commands")
-        embed.setDescription(`**Name**: ${config.commands_info.clear.name}\n **Usage**: ${config.commands_info.clear.usage}\n **Description**: ${config.commands_info.clear.description}\n\n**Name**: ${config.commands_info.test.name}\n **Usage**: ${config.commands_info.test.usage}\n **Description**: ${config.commands_info.test.description}\n\n**Name**: ${config.commands_info.orders.name}\n **Usage**: ${config.commands_info.orders.usage}\n **Description**: ${config.commands_info.orders.description}`)
+        embed.setDescription("");
+        embed.setDescription(description)
         embed.setFooter("You are admin!")
         message.author.send(embed)
     }
 }
-
-
