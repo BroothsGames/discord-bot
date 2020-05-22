@@ -1,7 +1,8 @@
-import { commands, orders_channel } from './../json/config.json';
+
+import { commands, orders_channel } from '../json/config.json';
 import lenguage from '../json/lenguages.json';
 
-import Utils from './../utils/utils';
+import Utils from '../utils/utils';
 const utils = new Utils();
 import { Message, TextChannel } from "discord.js";
 
@@ -16,4 +17,4 @@ module.exports.execute = async (message: Message, args: string, index: number) =
     message.channel.send(`${lenguage.info}: ${lenguage.order_info}`);  
     const channel = message.client.channels.cache.get(orders_channel) as TextChannel; 
     channel.send(`**${message.author.username}**, ${lenguage.order_send}: **${order}**`);
-}
+} 
