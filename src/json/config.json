@@ -9,7 +9,7 @@
     },
     "time_delete": 3000,
     "commands": [
-        "clear", "help", "order"	
+        "clear", "help", "order", "whois"	
     ],
     "orders_channel": "712766404033511514",
     "commands_info":{
@@ -27,6 +27,11 @@
             "name": "test",
             "usage": "[N/A]",
             "description": "Show if the command works."
+        },
+        "whois":{
+            "name": "whois",
+            "usage": "[user]",
+            "description": "Show a big information of the user."
         }
     }
 }
