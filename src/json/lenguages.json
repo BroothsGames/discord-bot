@@ -71,8 +71,8 @@
     "channels": "Channels",
     "emojis": "Emojis",
     "welcome_text": "welcome.",
-    "bye_text": "bye, bye",
+    "bye_text": "bye, bye.",
     "order": "order",
-    "order_info": "Your order has sent the team of developers",
+    "order_info": "Your order has sent the team of developers, wait instructions please.",
     "order_send": "has sent a order"
 }

@@ -1,4 +1,3 @@
-
 import { commands, orders_channel } from '../json/config.json';
 import lenguage from '../json/lenguages.json';
 
@@ -11,10 +10,14 @@ module.exports.execute = async (message: Message, args: string, index: number) =
         await message.channel.send(`${lenguage.syntax}: ` + '`' + `${process.env.PREFIX}${commands[index]} [${lenguage.order}]` +'`');
         utils.deleteBotMessage(message.channel as TextChannel, 1);
     }
+    else {
+        let order: String = ``;
+        for (let cycle = 0; cycle < args.length ; cycle++) {
+        order = `${order} ${args[cycle]}`;
+        }
 
-    const order = args.slice(0);
-
-    message.channel.send(`${lenguage.info}: ${lenguage.order_info}`);  
-    const channel = message.client.channels.cache.get(orders_channel) as TextChannel; 
-    channel.send(`**${message.author.username}**, ${lenguage.order_send}: **${order}**`);
+        message.channel.send(`${lenguage.info}: ${lenguage.order_info}`);  
+        const channel = message.client.channels.cache.get(orders_channel) as TextChannel; 
+        channel.send(`**${message.author.username}**, ${lenguage.order_send}: **${order}**`);
+    }
 } 
