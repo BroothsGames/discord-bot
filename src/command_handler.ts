@@ -3,7 +3,13 @@ import { Message, TextChannel } from "discord.js";
 import Utils from './utils/utils';
 const utils = new Utils();
 
-const URL: Array<any> = ["help", "clear", "order", "whois", "test"];
+import help from './commands/help';
+import clear from './commands/clear';
+import order from './commands/order';
+import whois from './commands/whois';
+import test from './commands/test';
+
+const COMMANDS: Array<any> = [help, clear, order, whois, test];
 
 export default class CommandHandler {
 
@@ -13,9 +19,9 @@ export default class CommandHandler {
         this.commands = commands;
     }
 
-    async handleCommand( message: Message) {
+    async handleCommand(message: Message) {
         if (!message.content.startsWith(`${process.env.PREFIX}`) || message.author.bot) return;
-    
+
         const args = message.content.slice(process.env.PREFIX?.length).trim().split(/ +/g);
         const command = args.shift()?.toLowerCase();
 
@@ -23,14 +29,13 @@ export default class CommandHandler {
 
         for (let index = 0; index < this.commands.length; index++) {
             if (command == this.commands[index]) {
-                const Command = require(`./commands/${URL[index]}`);
-                Command.execute(message, args, index);
+                COMMANDS[index].execute(message, args, index);
                 isValidCommand = true;
                 break;
             }
         }
 
-        if(isValidCommand) isValidCommand = false;
+        if (isValidCommand) isValidCommand = false;
         else if (command === '') {
             await message.channel.bulkDelete(1);
             await message.channel.send(`${lenguage.syntax}: ` + "`" + `${process.env.PREFIX}${lenguage.command} [${lenguage.required}] (${lenguage.optional})` + "`" + ``);

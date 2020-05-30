@@ -20,11 +20,12 @@
   "homepage": "https://github.com/BroothsGames/discord-bot#readme",
   "dependencies": {
     "discord.js": "^12.2.0",
-    "node.js": "0.0.1-security"
+    "node.js": "0.0.1-security",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
+    "@types/dotenv": "^8.2.0",
     "@types/node": "^14.0.4",
-    "dotenv": "^8.2.0",
     "nodemon": "^2.0.4",
     "typescript": "^3.9.3"
   }
