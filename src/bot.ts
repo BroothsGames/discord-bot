@@ -1,12 +1,25 @@
-import { config } from 'dotenv';
-import { name, activity, commands } from './json/config.json';
-config();
+import dotenv from 'dotenv';
+dotenv.config();
+import { name, activity } from './json/config.json';
 
-import { Client, ActivityType, Message, MessageEmbed } from 'discord.js';
-const client = new Client();
+import { Client, ActivityType, MessageEmbed } from 'discord.js';
+
+// Settings
+
+export const client = new Client();
+const PREFIX: string = process.env.PREFIX || "!";
+const TOKEN: string = process.env.TOKEN || "";
+
+import testing from './commands/testing';
+
+const COMMANDS: Array<any> = [testing];
 
 import CommandHandler from "./command_handler";
-const commandHandler = new CommandHandler(commands);
+const commandHandler = new CommandHandler(PREFIX, COMMANDS);
+
+client.login(TOKEN);
+
+// Fuctions
 
 client.once("ready", () => {
     console.log(`${name} ready!`);
@@ -22,8 +35,5 @@ client.on('guildMemberRemove', member => {
 });
 
 client.on('message', async message => {
-    commandHandler.handleCommand(message);
+    //commandHandler.handleCommand(message);
 });
-
-client.login(process.env.TOKEN);
-module.exports = client;

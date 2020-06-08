@@ -1,4 +1,45 @@
-import lenguage from './json/lenguages.json'
+import { Message, Collection } from "discord.js";
+
+export interface ICommand {
+    name: string;
+    function: string;
+    run(message: Message, args: string[]): VoidFunction;
+}
+
+export default class CommandHandler {
+
+    public PREFIX: string;
+    public COMMANDS: Collection<string, ICommand>;
+
+    constructor(PREFIX: string, COMMANDS: Array<ICommand>) {
+        this.PREFIX = PREFIX;
+        this.COMMANDS = new Collection();
+
+        for (let index = 0; index < COMMANDS.length; index++) {
+            this.COMMANDS.set(COMMANDS[index].name, COMMANDS[index]);
+        }
+    }
+
+    async onMessage(message: Message) {
+        try {
+
+            if (!message.content.startsWith(this.PREFIX) || message.author.bot) return;
+
+            const args: string[] = message.content.slice(this.PREFIX.length).trim().split(/ +/g);
+            const command: string = args.shift()?.toLowerCase() || '';
+
+            if (!this.COMMANDS.has(command)) return message.channel.send('command not found');
+
+            this.COMMANDS.get(command)?.run(message, args);
+
+        } catch (error) {
+            message.channel.send('A error has ocurred');
+            console.log(error);
+        }
+    }
+}
+
+/*import lenguage from './json/lenguages.json'
 import { Message, TextChannel } from "discord.js";
 import Utils from './utils/utils';
 const utils = new Utils();
@@ -14,8 +55,10 @@ const COMMANDS: Array<any> = [help, clear, order, whois, test];
 export default class CommandHandler {
 
     commands: Array<string>;
+    prefix: string;
 
-    constructor(commands: Array<string>) {
+    constructor(prefix: string, commands: Array<string>) {
+        this.prefix = prefix;
         this.commands = commands;
     }
 
@@ -48,4 +91,4 @@ export default class CommandHandler {
         }
     }
 
-}
+}*/
