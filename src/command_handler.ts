@@ -1,5 +1,7 @@
 import { Message, Collection } from "discord.js";
 
+import { CH_ERROR, CH_ERROR_COMMAND } from './json/lenguages.json';
+
 export interface ICommand {
     name: string;
     function: string;
@@ -28,12 +30,12 @@ export default class CommandHandler {
             const args: string[] = message.content.slice(this.PREFIX.length).trim().split(/ +/g);
             const command: string = args.shift()?.toLowerCase() || '';
 
-            if (!this.COMMANDS.has(command)) return message.channel.send('command not found');
+            if (!this.COMMANDS.has(command)) return message.channel.send(`${CH_ERROR_COMMAND}`);
 
             this.COMMANDS.get(command)?.run(message, args);
 
         } catch (error) {
-            message.channel.send('A error has ocurred');
+            message.channel.send(`${CH_ERROR}`);
             console.log(error);
         }
     }

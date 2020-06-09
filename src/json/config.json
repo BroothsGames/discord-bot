@@ -8,34 +8,5 @@
         "options": "LISTENING"
     },
     "time_delete": 3000,
-    "commands": [
-        "help", "clear", "order", "whois", "test"
-    ],
-    "orders_channel": "712766404033511514",
-    "commands_info":[
-        {
-            "admin": true,
-            "name": "help",
-            "usage": "(command)",
-            "description": "This command is used to find out the function of the commands"
-        },
-        {
-            "admin": true,
-            "name": "clear",
-            "usage": "[quantity] (channel)",
-            "description": "This command is used to delete messages"
-        },
-        {
-            "admin": false,
-            "name": "orders",
-            "usage": "[order]",
-            "description": "put the order you need specifically and it will be sent to the team"
-        },
-        {
-            "admin": false,
-            "name": "whois",
-            "usage": "[user]",
-            "description": "Show a big information of the user."
-        }
-    ]
+    "orders_channel": "712766404033511514"
 }

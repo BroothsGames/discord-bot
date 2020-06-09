@@ -1,4 +1,11 @@
 {
+    "B_MESSAGE_RUN": "works!",
+    "B_MESSAGE_WELCOME": "Welcome",
+    "B_MESSAGE_BYE": "Bye",
+
+    "CH_ERROR": "An error has ocurred",
+    "CH_ERROR_COMMAND": "Command not found",
+
     "command": "command",
     "command_not_allowed": "You don´t haver permissions for use this command.",
     "syntax": "Sintaxis",
