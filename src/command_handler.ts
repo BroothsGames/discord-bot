@@ -4,8 +4,10 @@ import { CH_ERROR, CH_ERROR_COMMAND } from './json/lenguages.json';
 
 export interface ICommand {
     name: string;
+    params: string;
     function: string;
-    run(message: Message, args: string[]): VoidFunction;
+    admin: boolean;
+    run: (message: Message, args: Array<string>) => unknown;
 }
 
 export default class CommandHandler {
@@ -38,6 +40,21 @@ export default class CommandHandler {
             message.channel.send(`${CH_ERROR}`);
             console.log(error);
         }
+    }
+}
+
+export class Command {
+
+    public name: string;
+    public params: string;
+    public function: string;
+    public admin: boolean;
+
+    constructor( command: ICommand) {
+        this.name = command.name;
+        this.params = command.params;
+        this.function = command.function;
+        this.admin = command.admin;
     }
 }
 

@@ -1,16 +1,14 @@
-import { TextChannel } from "discord.js";
+import { TextChannel, Message, DMChannel, NewsChannel } from "discord.js";
 import { time_delete } from './../json/config.json';
 
-export default class CommandHandler {
-
-    deleteBotMessage(channel: TextChannel, amount: number) {
-        try {
-            setTimeout(() => {
-                channel.bulkDelete(amount);
-            }, time_delete);
-        }
-        catch (e) {
-            console.log(e);
-        }
+export const deleteBotMessage = (channel: TextChannel | DMChannel | NewsChannel , amount : number = 1, time: boolean = false) => {
+    try {
+        if(!time) channel.bulkDelete(amount);
+        setTimeout(() => {
+            channel.bulkDelete(amount);
+        }, time_delete);
+    }
+    catch (error) {
+        console.log(error);
     }
 }

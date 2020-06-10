@@ -14,11 +14,12 @@ const ACTIVITY: ActivityType = activity.options as ActivityType;
 
 // Command handler
 
+import help from './commands/help';
 import testing from './commands/testing';
 
-const COMMANDS: Array<any> = [testing];
+const COMMANDS: Array<any> = [help, testing];
 
-const commandHandler = new CommandHandler(PREFIX, COMMANDS);
+export const commandHandler = new CommandHandler(PREFIX, COMMANDS);
 
 // Fuctions
 
