@@ -10,6 +10,15 @@ export interface ICommand {
     run: (message: Message, args: Array<string>) => unknown;
 }
 
+export class Command {
+
+    public command: ICommand;
+
+    constructor(command: ICommand) {
+        this.command = command;
+    }
+}
+
 export default class CommandHandler {
 
     public PREFIX: string;
@@ -40,21 +49,6 @@ export default class CommandHandler {
             message.channel.send(`${CH_ERROR}`);
             console.log(error);
         }
-    }
-}
-
-export class Command {
-
-    public name: string;
-    public params: string;
-    public function: string;
-    public admin: boolean;
-
-    constructor( command: ICommand) {
-        this.name = command.name;
-        this.params = command.params;
-        this.function = command.function;
-        this.admin = command.admin;
     }
 }
 
