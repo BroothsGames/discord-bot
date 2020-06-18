@@ -1,4 +1,4 @@
-import { commands, commands_info } from './../json/config.json';
+/*import { commands, commands_info } from './../json/config.json';
 import lenguage from './../json/lenguages.json';
 
 import { Message, TextChannel } from "discord.js";
@@ -53,4 +53,4 @@ export default class command{
             }
         }
     }
-}
+}*/

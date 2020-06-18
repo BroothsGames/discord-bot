@@ -15,9 +15,9 @@ const ACTIVITY: ActivityType = activity.options as ActivityType;
 // Command handler
 
 import help from './commands/help';
-import testing from './commands/testing';
+//import testing from './commands/testing';
 
-const COMMANDS: Array<any> = [help, testing];
+const COMMANDS: Array<any> = [help.command];
 
 export const commandHandler = new CommandHandler(PREFIX, COMMANDS);
 

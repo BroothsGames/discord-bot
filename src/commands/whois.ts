@@ -1,4 +1,4 @@
-import { Message, MessageEmbed, User, GuildMember } from "discord.js";
+/*import { Message, MessageEmbed, User, GuildMember } from "discord.js";
 
 export default class command {
     constructor() { }
@@ -11,4 +11,4 @@ export default class command {
         embed.setImage(`${username.user.avatarURL()}`)
         message.channel.send(embed)
     }
-}
+}*/

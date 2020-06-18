@@ -1,4 +1,4 @@
-import { commands, orders_channel, commands_info } from '../json/config.json';
+/*import { commands, orders_channel, commands_info } from '../json/config.json';
 import lenguage from '../json/lenguages.json';
 
 import Utils from '../utils/utils';
@@ -24,4 +24,4 @@ export default class command {
             channel.send(`**${message.author.username}**, ${lenguage.order_send}: **${order}**`);
         }
     }
-} 
+} */

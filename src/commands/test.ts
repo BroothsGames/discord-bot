@@ -1,4 +1,4 @@
-import { Message } from "discord.js";
+/*import { Message } from "discord.js";
 import { } from './../json/lenguages.json';
 
 export default class command {
@@ -11,3 +11,4 @@ export default class command {
 }
 
 
+*/

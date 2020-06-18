@@ -4,7 +4,7 @@ import { time_delete } from './../json/config.json';
 export const deleteBotMessage = (channel: TextChannel | DMChannel | NewsChannel , amount : number = 1, time: boolean = false) => {
     try {
         if(!time) channel.bulkDelete(amount);
-        setTimeout(() => {
+        else setTimeout(() => {
             channel.bulkDelete(amount);
         }, time_delete);
     }

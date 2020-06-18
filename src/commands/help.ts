@@ -10,10 +10,11 @@ const help = new Command({
     admin: false,
     run: async (message: Message, args: string[]) => {
         await deleteBotMessage(message.channel);
-        if (args[0]) {
+        if (!args[0]) {
             let description: String = ``;
             if (message.member?.hasPermission("ADMINISTRATOR")) {
                 commandHandler.COMMANDS.forEach(command => {
+                    console.log(command)
                     description = `${description}**Name**: ${command.name}\n**Usage**: ${commandHandler.PREFIX} ${command.name} ${command.params}\n**Description**: ${command.function}\n\n`
                 });
             }
